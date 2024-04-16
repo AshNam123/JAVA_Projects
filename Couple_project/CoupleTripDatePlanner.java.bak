@@ -1,0 +1,162 @@
+import java.util.Scanner;
+class Login
+{
+	String ur1="Admin";
+	String pass1 = "Admin";
+
+	public boolean Validate(String ur,String pass)
+	{
+		
+		if(ur.equals("Admin"))
+		{
+			if (pass.equals("Admin"))
+			{
+				System.out.println("Sucessfully Logged in");
+				return true;
+			}
+			else 
+			{
+				System.out.println("PassWord is Wrong");
+				return false;
+			}
+		}
+		else
+		{
+			System.out.println("Username is wrong");
+			return false;
+		}
+	}
+}
+class User_couple
+{
+}
+class Wheather
+{
+}
+class Budget
+{
+}
+class Activities
+{
+}
+class Location
+{
+}
+class Couple_dates 
+{
+	public void All_dates()
+	{
+		System.out.println("1.Picnic Date\n2.Walk Date\n3.Elegant Date\n4.Movie Date\n5.Double Date");
+	}
+}
+class Couple_trips 
+{
+}
+class Picnic_dates extends Couple_dates
+{
+}
+class Walk_dates extends Couple_dates
+{
+}
+class Elegant_dates extends Couple_dates
+{
+}
+class Movie_dates extends Couple_dates
+{
+}
+class Double_dates extends Couple_dates
+{
+}
+class Couple_Trip extends Ocassion
+{
+}
+class Flight_trips extends Couple_trips
+{
+}
+class Road_trips extends Couple_trips
+{
+}
+class Train_trips extends Couple_trips
+{
+}
+class Domestic_trips extends Flight_trips
+{
+}
+class International_trips extends Flight_trips
+{
+}
+class Bus_trips extends Road_trips
+{
+}
+class Car_trips extends Road_trips
+{
+}
+class Bike_trips extends Road_trips
+{
+}
+class CoupleTripDatePlanner 
+{
+	public static void main(String[] args) 
+	{
+		Login L1 = new Login();
+		Couple_dates C_d = new Couple_dates();
+		Picnic_dates P_d = new Picnic_dates();
+		Couple_trips C_t = new Couple_trips();
+		System.out.println("WELCOME to COUPLE DATE TRIP PLANNER");
+		System.out.println("DO you wnat to \n1.Login \n2.Signup");
+		Scanner sc = new Scanner(System.in);
+	    int Input = sc.nextInt();
+		switch(Input)
+		{
+			case 1:
+				System.out.println("Login");
+			    System.out.println("Enter the UserName:");
+				String ur = sc.next();
+				System.out.println("Enter the Password:");
+				String pass = sc.next();
+				boolean res = L1.Validate(ur,pass);
+				if (res == true)
+				{
+					System.out.println("Now Choose the ocassion you are planning\n1.Dates\n2.Trips");
+					int Input_occ = sc.nextInt();
+					switch(Input_occ)
+					{
+						case 1: 
+							System.out.println("Now choose the kind of date you are planning");
+						    C_d.All_dates();
+							int res_occ = sc.nextInt();
+							if(res_occ == 1 || res_occ == 2 || res_occ == 3 || res_occ == 4 || res_occ == 5)
+						    {
+								switch(res_occ)
+								{
+									case 1:
+										System.out.println("Picnic Date");
+									case 2:
+										System.out.println("Walk Date");
+									case 3:
+										System.out.println("Elegant Date");
+									case 4:
+										System.out.println("MOvie Date");
+									case 5:
+										System.out.println("Double Date");
+								}
+								
+						    }
+
+					}
+			   	}
+				else
+			    {
+					System.out.println("Choose the correst option");
+			    }
+
+                
+			    break;
+			case 2:
+				System.out.println("Signup");
+			    break;
+			
+		}
+		
+	}
+}
